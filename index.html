@@ -1,1 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>For Cutu 💗</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+    --pink:#e7a1b7;
+    --dark:#914d68;
+    --light:#fff4f8;
+    --cream:#fffafc;
+    --text:#513b44;
+    --border:#f0ccd8;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"DM Sans",sans-serif;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 20% 20%,#ffe6ef 0,transparent 30%),
+        radial-gradient(circle at 80% 70%,#fbe1eb 0,transparent 30%),
+        #fff8fb;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.25;
+    background-image:
+        radial-gradient(#d98fa9 1px,transparent 1px);
+    background-size:28px 28px;
+}
+
+h1,h2,h3{
+    font-family:"Playfair Display",serif;
+}
+
+p{
+    line-height:1.8;
+}
+
+.container{
+    width:min(900px,92%);
+    margin:auto;
+}
+
+section{
+    padding:85px 0;
+}
+
+/* =========================
+   ENTER SCREEN
+========================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:
+        linear-gradient(135deg,#fff5f9,#fde6ef);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#intro.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.intro-box{
+    width:min(600px,90%);
+    padding:45px 25px;
+}
+
+.intro-small{
+    letter-spacing:4px;
+    font-size:11px;
+    text-transform:uppercase;
+    color:var(--dark);
+}
+
+.intro-box h1{
+    font-size:clamp(55px,14vw,95px);
+    margin:15px 0;
+}
+
+.intro-box p{
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.enter-btn{
+    border:none;
+    background:var(--dark);
+    color:white;
+    padding:16px 30px;
+    border-radius:100px;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 15px 35px #914d6835;
+    transition:.3s;
+}
+
+.enter-btn:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:900;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:#ffffffdd;
+    backdrop-filter:blur(10px);
+    cursor:pointer;
+    font-size:19px;
+    box-shadow:0 8px 25px #914d6815;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-card{
+    background:#ffffffd9;
+    backdrop-filter:blur(14px);
+    border:1px solid white;
+    border-radius:35px;
+    padding:50px 25px;
+    box-shadow:0 25px 80px #d28da91f;
+}
+
+.kicker{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:11px;
+    color:var(--dark);
+}
+
+.hero h1{
+    font-size:clamp(60px,14vw,100px);
+    margin:15px 0;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 28px;
+    font-size:18px;
+}
+
+.btn{
+    border:none;
+    background:var(--dark);
+    color:white;
+    padding:14px 24px;
+    border-radius:100px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#ffffffd5;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 15px 40px #b9799112;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--dark);
+}
+
+/* =========================
+   POLAROID GALLERY
+========================= */
+
+.polaroid-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:35px;
+}
+
+.polaroid{
+    background:white;
+    padding:10px 10px 28px;
+    box-shadow:0 15px 30px #80506020;
+    transition:.4s;
+    position:relative;
+}
+
+.polaroid:nth-child(1){
+    transform:rotate(-4deg);
+}
+
+.polaroid:nth-child(2){
+    transform:rotate(3deg);
+}
+
+.polaroid:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.polaroid:nth-child(4){
+    transform:rotate(4deg);
+}
+
+.polaroid:nth-child(5){
+    transform:rotate(-3deg);
+}
+
+.polaroid:nth-child(6){
+    transform:rotate(2deg);
+}
+
+.polaroid:hover{
+    transform:
+        rotate(0deg)
+        translateY(-12px)
+        scale(1.04);
+    z-index:5;
+}
+
+.polaroid img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+}
+
+.polaroid-caption{
+    text-align:center;
+    margin-top:12px;
+    font-family:"Playfair Display",serif;
+    color:#72525e;
+}
+
+/* =========================
+   MEMORY TIMELINE
+========================= */
+
+.timeline{
+    margin-top:35px;
+    border-left:2px solid var(--border);
+    padding-left:25px;
+}
+
+.memory{
+    position:relative;
+    margin-bottom:35px;
+}
+
+.memory:before{
+    content:"";
+    position:absolute;
+    left:-34px;
+    top:6px;
+    width:13px;
+    height:13px;
+    background:var(--pink);
+    border:4px solid white;
+    border-radius:50%;
+}
+
+.memory h3{
+    color:var(--dark);
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-card{
+    margin-bottom:18px;
+}
+
+.quiz-question{
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.quiz-options{
+    display:grid;
+    gap:10px;
+}
+
+.quiz-options button{
+    padding:14px;
+    border-radius:15px;
+    border:1px solid var(--border);
+    background:white;
+    color:var(--text);
+    text-align:left;
+    cursor:pointer;
+}
+
+.quiz-options button:hover{
+    background:var(--light);
+}
+
+.quiz-result{
+    min-height:25px;
+    margin-top:14px;
+    color:var(--dark);
+    font-weight:600;
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-area{
+    text-align:center;
+}
+
+.cake{
+    width:220px;
+    height:110px;
+    margin:50px auto 20px;
+    background:#f4b6ca;
+    border-radius:15px 15px 25px 25px;
+    position:relative;
+    box-shadow:0 15px 35px #9d5d7628;
+}
+
+.cake:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:30px;
+    background:#fff1f6;
+    border-radius:15px 15px 8px 8px;
+}
+
+.candle{
+    position:absolute;
+    bottom:95px;
+    width:13px;
+    height:45px;
+    background:white;
+    border-radius:5px;
+}
+
+.candle:nth-child(1){
+    left:55px;
+}
+
+.candle:nth-child(2){
+    left:104px;
+}
+
+.candle:nth-child(3){
+    left:153px;
+}
+
+.flame{
+    width:15px;
+    height:21px;
+    position:absolute;
+    top:-21px;
+    left:-1px;
+    background:#f3a25d;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 0 20px #f3a25d88;
+    animation:flicker .7s infinite alternate;
+}
+
+.flame.off{
+    display:none;
+}
+
+@keyframes flicker{
+    from{
+        transform:scale(.9) rotate(-3deg);
+    }
+
+    to{
+        transform:scale(1.05) rotate(3deg);
+    }
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-area{
+    text-align:center;
+}
+
+.envelope{
+    width:300px;
+    height:190px;
+    margin:45px auto;
+    position:relative;
+    cursor:pointer;
+    perspective:1000px;
+}
+
+.envelope-back{
+    position:absolute;
+    inset:0;
+    background:#efb1c4;
+    border-radius:10px;
+}
+
+.envelope-front{
+    position:absolute;
+    inset:0;
+    background:#f7cada;
+    clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+    z-index:3;
+}
+
+.envelope-flap{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    height:120px;
+    background:#e9a5bb;
+    clip-path:polygon(0 0,100% 0,50% 70%);
+    transform-origin:top;
+    transition:.8s;
+    z-index:4;
+}
+
+.letter-paper{
+    position:absolute;
+    background:white;
+    width:270px;
+    min-height:230px;
+    left:15px;
+    top:10px;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 10px 30px #6d40501c;
+    transition:.8s;
+    z-index:2;
+    text-align:left;
+    opacity:0;
+}
+
+.envelope.open .envelope-flap{
+    transform:rotateX(180deg);
+}
+
+.envelope.open .letter-paper{
+    transform:translateY(-170px);
+    opacity:1;
+    z-index:5;
+}
+
+.letter-text{
+    white-space:pre-wrap;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    animation:heartFloat 6s linear forwards;
+    z-index:800;
+}
+
+@keyframes heartFloat{
+    to{
+        transform:translateY(-110vh) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+footer{
+    text-align:center;
+    padding:40px 0 70px;
+    color:#9a7180;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .polaroid-grid{
+        grid-template-columns:1fr 1fr;
+        gap:18px;
+    }
+
+    .hero-card{
+        padding:40px 20px;
+    }
+
+    .envelope{
+        transform:scale(.85);
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .polaroid-grid{
+        grid-template-columns:1fr;
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TAP TO ENTER
+===================================================== -->
+
+<div id="intro">
+
+    <div class="intro-box">
+
+        <div class="intro-small">
+            something made just for
+        </div>
+
+        <h1>Purvi 💗</h1>
+
+        <p>
+            There's a little birthday surprise waiting inside.
+        </p>
+
+        <button class="enter-btn"
+                onclick="enterSite()">
+            Tap to enter ✨
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="music"
+       loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn"
+        onclick="toggleMusic()"
+        id="musicButton">
+    🎵
+</button>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-card reveal">
+
+            <div class="kicker">
+                a tiny birthday corner for
+            </div>
+
+            <h1>
+                Purvi 💗
+            </h1>
+
+            <p>
+                Also known as Cutu, professional cutie,
+                occasional baby, and one of my favourite people.
+            </p>
+
+            <button class="btn"
+                    onclick="scrollToSection('welcome')">
+                Keep going 🌷
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section id="welcome">
+
+<div class="container reveal">
+
+    <div class="kicker">
+        chapter one
+    </div>
+
+    <h2>
+        Happy Birthday, Cutu 🌸
+    </h2>
+
+    <p>
+        You are genuinely one of those people who make
+        ordinary days feel a little nicer.
+        You're sweet, you always help me out,
+        and somehow you manage to be ridiculously cute
+        while doing absolutely nothing.
+    </p>
+
+    <p>
+        So I made you a little corner of the internet.
+        Because apparently a normal birthday message
+        wasn't enough. :)
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     REASONS
+===================================================== -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="kicker">
+        little things
+    </div>
+
+    <h2>
+        Reasons I like you 💕
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                01 · Your sweetness
+            </h3>
+
+            <p>
+                ✏️ ADD YOUR PERSONAL REASON HERE.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                02 · Your baby mode
+            </h3>
+
+            <p>
+                ✏️ ADD YOUR PERSONAL REASON HERE.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                03 · You always help
+            </h3>
+
+            <p>
+                ✏️ ADD YOUR PERSONAL REASON HERE.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     POLAROID PHOTOS
+===================================================== -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="kicker">
+        our gallery
+    </div>
+
+    <h2>
+        Little pieces of us 📸
+    </h2>
+
+    <p>
+        ✏️ Replace the photos and captions with your own.
+    </p>
+
+
+    <div class="polaroid-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="polaroid">
+
+            <img src="photo1.jpg"
+                 alt="Memory 1">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 1
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="polaroid">
+
+            <img src="photo2.jpg"
+                 alt="Memory 2">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 2
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="polaroid">
+
+            <img src="photo3.jpg"
+                 alt="Memory 3">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 3
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="polaroid">
+
+            <img src="photo4.jpg"
+                 alt="Memory 4">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 4
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="polaroid">
+
+            <img src="photo5.jpg"
+                 alt="Memory 5">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 5
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="polaroid">
+
+            <img src="photo6.jpg"
+                 alt="Memory 6">
+
+            <div class="polaroid-caption">
+                ✏️ Caption 6
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORY LANE
+===================================================== -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="kicker">
+        memory lane
+    </div>
+
+    <h2>
+        Things I'll remember 🌷
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="memory">
+
+            <h3>
+                Memory #1
+            </h3>
+
+            <p>
+                ✏️ Write your first favourite memory here.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <h3>
+                Memory #2
+            </h3>
+
+            <p>
+                ✏️ Write another memory here.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <h3>
+                Memory #3
+            </h3>
+
+            <p>
+                ✏️ Add an inside joke or funny conversation here.
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <h3>
+                Memory #4
+            </h3>
+
+            <p>
+                ✏️ Add another moment you don't want to forget.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<section>
+
+<div class="container reveal">
+
+    <div class="kicker">
+        important investigation
+    </div>
+
+    <h2>
+        How well do you know me? 👀
+    </h2>
+
+    <p>
+        ✏️ Replace the questions and answers below.
+    </p>
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="card quiz-card">
+
+        <div class="quiz-question">
+            ✏️ Question 1 goes here
+        </div>
+
+        <div class="quiz-options">
+
+            <button onclick="answer(this,true)">
+                A · ✏️ Correct answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                B · ✏️ Wrong answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                C · ✏️ Wrong answer
+            </button>
+
+        </div>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="card quiz-card">
+
+        <div class="quiz-question">
+            ✏️ Question 2 goes here
+        </div>
+
+        <div class="quiz-options">
+
+            <button onclick="answer(this,true)">
+                A · ✏️ Correct answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                B · ✏️ Wrong answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                C · ✏️ Wrong answer
+            </button>
+
+        </div>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="card quiz-card">
+
+        <div class="quiz-question">
+            ✏️ Question 3 goes here
+        </div>
+
+        <div class="quiz-options">
+
+            <button onclick="answer(this,true)">
+                A · ✏️ Correct answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                B · ✏️ Wrong answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                C · ✏️ Wrong answer
+            </button>
+
+        </div>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <!-- QUESTION 4 -->
+
+    <div class="card quiz-card">
+
+        <div class="quiz-question">
+            ✏️ Question 4 goes here
+        </div>
+
+        <div class="quiz-options">
+
+            <button onclick="answer(this,true)">
+                A · ✏️ Correct answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                B · ✏️ Wrong answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                C · ✏️ Wrong answer
+            </button>
+
+        </div>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <!-- QUESTION 5 -->
+
+    <div class="card quiz-card">
+
+        <div class="quiz-question">
+            ✏️ Question 5 goes here
+        </div>
+
+        <div class="quiz-options">
+
+            <button onclick="answer(this,true)">
+                A · ✏️ Correct answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                B · ✏️ Wrong answer
+            </button>
+
+            <button onclick="answer(this,false)">
+                C · ✏️ Wrong answer
+            </button>
+
+        </div>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CAKE
+===================================================== -->
+
+<section>
+
+<div class="container reveal cake-area">
+
+    <div class="kicker">
+        make a wish
+    </div>
+
+    <h2>
+        One more thing... 🎂
+    </h2>
+
+    <p>
+        Tap the flames to blow out the candles.
+    </p>
+
+
+    <div class="cake">
+
+        <div class="candle">
+            <div class="flame"
+                 onclick="blowCandle(this)">
+            </div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"
+                 onclick="blowCandle(this)">
+            </div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"
+                 onclick="blowCandle(this)">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="cakeMessage"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ENVELOPE LETTER
+===================================================== -->
+
+<section>
+
+<div class="container reveal envelope-area">
+
+    <div class="kicker">
+        something from me
+    </div>
+
+    <h2>
+        There's a letter for you 💌
+    </h2>
+
+    <p>
+        Tap the envelope.
+    </p>
+
+
+    <div class="envelope"
+         onclick="openLetter()"
+         id="envelope">
+
+        <div class="envelope-back"></div>
+
+        <div class="letter-paper">
+
+            <div class="letter-text">
+
+✏️ WRITE YOUR LETTER HERE.
+
+Dear Cutu,
+
+Happy Birthday. 💗
+
+✏️ Add everything you want to say here.
+
+Talk about your favourite memories.
+Add your inside jokes.
+Tell her what you appreciate about her.
+Be as cute or flirty as you want.
+
+And most importantly...
+
+✏️ END YOUR LETTER HERE.
+
+— from me
+
+            </div>
+
+        </div>
+
+        <div class="envelope-flap"></div>
+
+        <div class="envelope-front"></div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section>
+
+<div class="container reveal"
+     style="text-align:center">
+
+    <div class="kicker">
+        one last thing
+    </div>
+
+    <h2>
+        Happy Birthday, you. 💗
+    </h2>
+
+    <p>
+        I hope this year gives you an unreasonable
+        amount of reasons to smile.
+
+        Keep being your sweet, adorable,
+        slightly-baby self.
+    </p>
+
+    <button class="btn"
+            onclick="sendHearts()">
+        One more thing ✨
+    </button>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+    Made with way too much pink for Cutu 🌷
+</footer>
+
+
+<script>
+
+/* =========================
+   ENTER WEBSITE
+========================= */
+
+function enterSite(){
+
+    const intro =
+        document.getElementById("intro");
+
+    intro.classList.add("hide");
+
+    const music =
+        document.getElementById("music");
+
+    music.volume = 0.35;
+
+    music.play()
+        .then(() => {
+            document.getElementById("musicButton")
+                .textContent = "🔊";
+        })
+        .catch(() => {});
+
+    sendHearts();
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+
+    if(music.paused){
+
+        music.play();
+
+        button.textContent = "🔊";
+
+        musicPlaying = true;
+
+    }else{
+
+        music.pause();
+
+        button.textContent = "🎵";
+
+        musicPlaying = false;
+
+    }
+
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+function scrollToSection(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+function answer(button,correct){
+
+    const card =
+        button.closest(".quiz-card");
+
+    const result =
+        card.querySelector(".quiz-result");
+
+
+    if(correct){
+
+        result.textContent =
+            "Okayyy, you actually know me. 👀💕";
+
+    }else{
+
+        result.textContent =
+            "Hmm... I expected better from you. 😭";
+
+    }
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+function blowCandle(flame){
+
+    flame.classList.add("off");
+
+    const remaining =
+        document.querySelectorAll(
+            ".flame:not(.off)"
+        );
+
+    if(remaining.length === 0){
+
+        document
+            .getElementById("cakeMessage")
+            .innerHTML =
+            "<h3>Wish made. ✨</h3>" +
+            "<p>Now go have the best birthday ever. 💗</p>";
+
+        sendHearts();
+
+    }
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+function openLetter(){
+
+    document
+        .getElementById("envelope")
+        .classList.toggle("open");
+
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+function sendHearts(){
+
+    for(let i=0;i<25;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "floating-heart";
+
+        heart.textContent =
+            ["♥","♡","✦","✿","💗"]
+            [Math.floor(Math.random()*5)];
+
+        heart.style.left =
+            Math.random()*100+"vw";
+
+        heart.style.fontSize =
+            (14+Math.random()*22)+"px";
+
+        heart.style.animationDelay =
+            Math.random()*1.5+"s";
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(
+            () => heart.remove(),
+            7000
+        );
+
+    }
+
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("show");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
